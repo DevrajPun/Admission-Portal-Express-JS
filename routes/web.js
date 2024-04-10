@@ -17,6 +17,7 @@ route.get("/contact", checkUseAuth, FrontController.contact);
 route.post("/insertuser", FrontController.insertUser);
 route.post("/verifyLogin", FrontController.verifylogin);
 route.get("/logout", FrontController.Logout);
+route.get("/profile",checkUseAuth, FrontController.Profile);
 
 // Course controller
 route.post("/course_insert", checkUseAuth, CourseController.courseInsert);

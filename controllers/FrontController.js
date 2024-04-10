@@ -23,31 +23,31 @@ class FrontController {
   };
   static register = async (req, res) => {
     try {
-      res.render("register", {msg: req.flash("error")});
+      res.render("register", { msg: req.flash("error") });
     } catch (error) {
       console.log(error);
     }
   };
   static home = async (req, res) => {
     try {
-      const {name, email, image} = req.data;
-      res.render("home", {n: name, i: image, e:email});
+      const { name, email, image } = req.data;
+      res.render("home", { n: name, i: image, e: email });
     } catch (e) {
       console.log(e);
     }
   };
   static about = async (req, res) => {
     try {
-      const {name, email, image} = req.data;
-      res.render("about", {n: name, i: image});
+      const { name, email, image } = req.data;
+      res.render("about", { n: name, i: image });
     } catch (e) {
       console.log(e);
     }
   };
   static contact = async (req, res) => {
     try {
-      const {name, email, image} = req.data;
-      res.render("contact", {n: name, i: image});
+      const { name, email, image } = req.data;
+      res.render("contact", { n: name, i: image });
     } catch (e) {
       console.log(e);
     }
@@ -64,8 +64,8 @@ class FrontController {
         folder: "userprofile",
       });
       //console.log(imageUpload);
-      const {n, e, p, cp} = req.body;
-      const user = await UserModel.findOne({email: e});
+      const { n, e, p, cp } = req.body;
+      const user = await UserModel.findOne({ email: e });
       // console.log(user)
       if (user) {
         req.flash("error", "Email Already Exits.");
@@ -102,16 +102,16 @@ class FrontController {
   static verifylogin = async (req, res) => {
     try {
       // console.log(req.body);
-      const {email, password} = req.body;
+      const { email, password } = req.body;
       //console.log(req.body);
-      const user = await UserModel.findOne({email: email});
+      const user = await UserModel.findOne({ email: email });
       // console.log(user)
       if (user != null) {
         const ismatch = await bcrypt.compare(password, user.password);
         // console.log(ismatch)
         if (ismatch) {
           // token
-          const token = jwt.sign({ID: user._id}, "secretkeyhaikuchbhilikhlo");
+          const token = jwt.sign({ ID: user._id }, "secretkeyhaikuchbhilikhlo");
           // console.log(token)
           res.cookie("token", token);
           res.redirect("/home");
@@ -128,6 +128,15 @@ class FrontController {
     try {
       res.clearCookie("token");
       res.redirect("/");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  static Profile = async (req, res) => {
+    try {
+      const { name, email, image } = req.data;
+      res.render("profile", { n: name, i: image });
     } catch (error) {
       console.log(error);
     }
