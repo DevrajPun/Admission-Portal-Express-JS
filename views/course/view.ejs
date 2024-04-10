@@ -1,0 +1,28 @@
+<%- include("../header.ejs") %>
+<br />
+<h1 class="text-center mt-5">Course Display</h1>
+<div class="container">
+  <table class="table table-borderd">
+    <tr>
+      <th>S. No.</th>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Course</th>
+      <th>Phone</th>
+    </tr>
+    <tr>
+      <th><%= d.id %></th>
+      <th><%= d.name %></th>
+      <th><%= d.email %></th>
+      <th><%= d.course %></th>
+      <th><%= d.phone %></th>
+    </tr>
+  </table>
+</div>
+
+<center>
+  <a href="/courseDisplay" class="btn btn-outline-info">Back</a>
+</center>
+
+<%- include("../footer.ejs") %>

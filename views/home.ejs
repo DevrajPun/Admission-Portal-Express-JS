@@ -1,0 +1,204 @@
+<%- include("./header.ejs") %>
+<!--slide start-->
+<div class="carousel slide" data-bs-ride="carousel" id="FFS">
+  <div class="carousel-indicators">
+    <button
+      type="button"
+      data-bs-target="#FFS"
+      data-bs-slide-to="0"
+      class="active"></button>
+    <button type="button" data-bs-target="#FFS" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#FFS" data-bs-slide-to="2"></button>
+  </div>
+  <!--carousel-inner start-->
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="1000">
+      <img
+        src="https://pn-paul.netlify.app/image/slider1.jpg"
+        alt=""
+        class="w-100" />
+    </div>
+    <div class="carousel-item" data-bs-interval="1000">
+      <img
+        src="https://pn-paul.netlify.app/image/slider22.jpg"
+        alt=""
+        class="w-100" />
+    </div>
+    <div class="carousel-item" data-bs-interval="1000">
+      <img
+        src="https://pn-paul.netlify.app/image/slidwr33.jpg"
+        alt=""
+        class="w-100" />
+    </div>
+  </div>
+</div>
+<div class="container" style="margin-top: 100px">
+  <div class="row mb-5">
+    <div class="col-md-4">
+      <div class="card shadow-lg mx-1 px-5 py-5 text-justify">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero doloribus
+        ex assumenda fuga cupiditate repudiandae. Quia alias blanditiis enim
+        recusandae illum aliquid in nihil voluptate. Minima neque ab odit nulla
+        eum laborum, aut, officiis quaerat porro ut animi perferend
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow-lg mx-1 px-5 py-5 text-justify">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero doloribus
+        ex assumenda fuga cupiditate repudiandae. Quia alias blanditiis enim
+        recusandae illum aliquid in nihil voluptate. Minima neque ab odit nulla
+        eum laborum, aut, officiis quaerat porro ut animi perferend
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow-lg mx-1 px-5 py-5 text-justify">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero doloribus
+        ex assumenda fuga cupiditate repudiandae. Quia alias blanditiis enim
+        recusandae illum aliquid in nihil voluptate. Minima neque ab odit nulla
+        eum laborum, aut, officiis quaerat porro ut animi perferend
+      </div>
+    </div>
+  </div>
+  <div class="row mb-5">
+    <div class="col-md-4">
+      <div class="card shadow-lg">
+        <img src="Images/img4.webp" class="w-100" alt="" />
+        <h1 class="text-center mt-3 mb-3">B.Tech</h1>
+        <p class="text-center">
+          B.Tech is a professional undergraduate engineering degree
+        </p>
+        <button
+          data-bs-toggle="modal"
+          data-bs-target="#btech"
+          class="btn btn-info mb-4"
+          style="margin: 0 110px; font-size: 20px">
+          Register
+        </button>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-lg">
+        <img src="Images/img4.webp" class="w-100" alt="" />
+        <h1 class="text-center mt-3 mb-3">B.Tech</h1>
+        <p class="text-center">
+          B.Tech is a professional undergraduate engineering degree
+        </p>
+        <button
+          class="btn btn-info mb-4"
+          style="margin: 0 110px; font-size: 20px">
+          Register
+        </button>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow-lg">
+        <img src="Images/img4.webp" class="w-100" alt="" />
+        <h1 class="text-center mt-3 mb-3">B.Tech</h1>
+        <p class="text-center">
+          B.Tech is a professional undergraduate engineering degree
+        </p>
+        <button
+          class="btn btn-info mb-4"
+          style="margin: 0 110px; font-size: 20px">
+          Register
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="btech">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Course Register</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form action="/course_insert" method="post">
+          <div class="form-group">
+            <label for="name">Enter name</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter full name"
+              name="name"
+              id="name"
+              required
+              value="<%= n %>" />
+          </div>
+          <div class="form-group">
+            <label for="email">Enter email</label>
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Enter email"
+              name="email"
+              id="email"
+              required
+              value="<%= e %>" />
+          </div>
+          <div class="form-group">
+            <label for="number">Phone number</label>
+            <input
+              type="number"
+              class="form-control"
+              placeholder="Enter number"
+              name="phone"
+              id="number"
+              required />
+          </div>
+          <div class="form-group">
+            <label for="DOB">DOB</label>
+            <input
+              type="date"
+              class="form-control"
+              placeholder="dd-mm-yy"
+              name="dob"
+              id="DOB"
+              required />
+          </div>
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Address"
+              name="address"
+              id="address"
+              required />
+          </div>
+          <div class="mb-3">
+            <label for="">Gender</label>
+            <input type="radio" name="gender" value="male" />Male
+            <input type="radio" name="gender" value="female" />Female
+          </div>
+          <div class="mb-3">
+            <label for="">Education</label>
+            <select name="education" id="" class="form-control form-select">
+              <option value="">Select education</option>
+              <option value="10">10th</option>
+              <option value="12">12th</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="">Course</label>
+            <input
+              type="text"
+              value="btech"
+              class="form-control"
+              name="course" />
+          </div>
+
+          <center>
+            <button class="btn btn-primary mt-3" type="submit">Submit</button>
+          </center>
+          <!-- <%- include("./footer.ejs") %> -->
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

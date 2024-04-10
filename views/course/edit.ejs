@@ -1,0 +1,60 @@
+<%- include("../header.ejs") %>
+  <br />
+  <h1 class="text-center mt-5">Course Edit</h1>
+  <div class="container">
+    <form action="/courseUpdate/<%= d.id %>" method="post">
+      <div class="form-group">
+        <label for="name">Enter name</label>
+        <input type="text" class="form-control" placeholder="Enter full name" name="name" id="name" required
+          value="<%= d.name %>" />
+      </div>
+      <div class="form-group">
+        <label for="email">Enter email</label>
+        <input type="email" class="form-control" placeholder="Enter email" name="email" id="email" required
+          value="<%= d.email %>" />
+      </div>
+      <div class="form-group">
+        <label for="number">Phone number</label>
+        <input type="number" class="form-control" placeholder="Enter number" name="phone" id="number" required
+          value="<%= d.phone %>" />
+      </div>
+      <div class="form-group">
+        <label for="DOB">DOB</label>
+        <input type="date" class="form-control" placeholder="dd-mm-yy" name="dob" id="DOB" required
+          value="<%= d.dob %>" />
+      </div>
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input type="text" class="form-control" placeholder="Address" name="address" id="address" required
+          value="<%= d.address %>" />
+      </div>
+      <div class="mb-3">
+        <label for="">Gender</label>
+        <input type="radio" name="gender" value="male" />Male
+        <input type="radio" name="gender" value="female" />Female
+      </div>
+      <div class="mb-3">
+        <label for="">Education</label>
+        <select name="education" id="" class="form-control form-select">
+          <option value="">Select education</option>
+          <option value="10">10th</option>
+          <option value="12">12th</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="">Course</label>
+        <input type="text" value="btech" class="form-control" name="course" readonly value="<%= d.course %>" required />
+      </div>
+
+      <center>
+        <button class="btn btn-primary mt-3" type="submit">Submit</button>
+      </center>
+
+    </form>
+  </div>
+
+  <center>
+    <a href="/courseDisplay" class=" btn btn-outline-info">Back</a>
+  </center>
+
+  <%- include("../footer.ejs") %>
